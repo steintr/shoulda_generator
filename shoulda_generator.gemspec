@@ -2,10 +2,10 @@
 
 Gem::Specification.new do |s|
   s.name = %q{shoulda_generator}
-  s.version = "0.2.1"
+  s.version = "0.2.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Josh Nichols"]
+  s.authors = ["Josh Nichols", "Martijn Storck"]
   s.date = %q{2009-01-06}
   s.description = %q{Generators which create tests using shoulda}
   s.email = %q{josh@technicalpickles.com}
