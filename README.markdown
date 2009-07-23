@@ -24,7 +24,6 @@ The next morning, I was struck awake at 5am with the inspiration to start implem
 
  * [shoulda](http://thoughtbot.com/projects/shoulda) installed as a plugin
  * [factory\_girl](http://github.com/thoughtbot/factory_girl) gem installed
- * [factory\_girl\_on\_rails](http://github.com/technicalpickles/factory_girl_on_rails) installed as a plugin
 
 ### shoulda\_scaffold
 
@@ -42,7 +41,6 @@ The next morning, I was struck awake at 5am with the inspiration to start implem
 
  * [shoulda](http://thoughtbot.com/projects/shoulda) installed as a plugin
  * [factory\_girl](http://github.com/thoughtbot/factory_girl) gem installed
- * [factory\_girl\_on\_rails](http://github.com/technicalpickles/factory_girl_on_rails) installed as a plugin
  * [haml](http://haml.hamptoncatlin.com/) gem installed on the system, and the project has been hamlified using  `haml --rails`
 
 ## Getting it
@@ -65,12 +63,11 @@ Usage is the same as the default Rails generators.
 
 ## Configuring it
 
-You can override the default values for templating and functional\_test\_style by placing a .shoulda\_generator  file in your home directory.
+You can override the default values for templating by placing a .shoulda\_generator  file in your home directory.
 
 Here's an example `.shoulda_generator`:
 
     :templating: erb              # supported options: haml|erb
-    :functional_test_syle: basic  # supported options: should_be_restful|basic
 
 ## Developing it
 
