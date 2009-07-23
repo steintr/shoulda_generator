@@ -5,16 +5,14 @@
 class ShouldaScaffoldGeneratorConfig
   
   DEFAULT_TEMPLATING = 'haml'
-  DEFAULT_FUNCTIONAL_TEST_STYLE = 'should_be_restful'
   
   def initialize()
     @config = load_file(config_file)
     
     @templating = @config[:templating] || DEFAULT_TEMPLATING
-    @functional_test_style = @config[:functional_test_style] || DEFAULT_FUNCTIONAL_TEST_STYLE
   end
   
-  attr_reader :templating, :functional_test_style
+  attr_reader :templating
    
   private
    
@@ -123,7 +121,7 @@ class ShouldaScaffoldGenerator < Rails::Generator::NamedBase
         'controller.rb', File.join('app/controllers', controller_class_path, "#{controller_file_name}_controller.rb")
       )
 
-      m.template("functional_test/#{functional_test_style}.rb", File.join('test/functional', controller_class_path, "#{controller_file_name}_controller_test.rb"))
+      m.template("functional_test/basic.rb", File.join('test/functional', controller_class_path, "#{controller_file_name}_controller_test.rb"))
       m.template('helper.rb',          File.join('app/helpers',     controller_class_path, "#{controller_file_name}_helper.rb"))
 
       m.route_resources controller_file_name
@@ -134,10 +132,6 @@ class ShouldaScaffoldGenerator < Rails::Generator::NamedBase
 
   def templating
     options[:templating] || @configuration.templating
-  end
-
-  def functional_test_style
-    options[:functional_test_style] || @configuration.functional_test_style
   end
 
   protected
@@ -153,9 +147,7 @@ class ShouldaScaffoldGenerator < Rails::Generator::NamedBase
              "Don't add timestamps to the migration file for this model") { |v| options[:skip_timestamps] = v }
       opt.on("--skip-migration",
              "Don't generate a migration file for this model") { |v| options[:skip_migration] = v }
-      opt.on("--templating [erb|haml]", "Specify the templating to use (haml by default)") { |v| options[:templating] = v }
-      opt.on("--functional-test-style [basic|should_be_restful]", "Specify the style of the functional test (should_be_restful by default)") { |v| options[:functional_test_style] = v }
-      
+      opt.on("--templating [erb|haml]", "Specify the templating to use (haml by default)") { |v| options[:templating] = v }      
      end
 
     def scaffold_views
