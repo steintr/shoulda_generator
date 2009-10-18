@@ -15,9 +15,9 @@ The next morning, I was struck awake at 5am with the inspiration to start implem
 
  * A new model
  * A migration for the model
-  * Skip using --skip-migration
+   * Skip using --skip-migration
  * A factory defined with [factory_girl](http://github.com/thoughtbot/factory_girl)
-  * Skip using --skip-factory
+   * Skip using --skip-factory
  * A [shoulda](http://thoughtbot.com/projects/shoulda) unit test with a few simple 'should's
 
 #### Prereqs:
@@ -30,7 +30,7 @@ The next morning, I was struck awake at 5am with the inspiration to start implem
 
  * Everything included in shoulda_model
  * A controller (sans unnecessary comments)
- * Choice of [haml](http://haml.hamptoncatlin.com/) (default) or ERB 
+ * Choice of [haml](http://haml.hamptoncatlin.com/) (default) or ERB
    * Specify which with the --templating option
  * Simple layout styled with blueprint
    * Skip using --skip-layout
@@ -50,16 +50,16 @@ The next morning, I was struck awake at 5am with the inspiration to start implem
 shoulda\_generator is available as a gem via [GitHub](http://github.com). If you haven't done so already, you need to setup GitHub as a gem source:
 
     $ gem sources -a http://gems.github.com
-    
+
 Now you can install it:
-    
+
     $ sudo gem install technicalpickles-shoulda_generator
 
 ## Example usage
 
 Usage is the same as the default Rails generators.
 
-    $ script/generate shoulda_model post title:string body:text published:boolean 
+    $ script/generate shoulda_model post title:string body:text published:boolean
     $ script/generate shoulda_scaffold post title:string body:text published:boolean
 
 
